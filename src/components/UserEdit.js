@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const SERVER_URL = process.env.SERVER_URL;
 
 const EditForm = (props) => {
     console.log(props.user)
@@ -25,7 +25,7 @@ const EditForm = (props) => {
         const updateInfo = { loc, phone, user}
         console.log(updateInfo)
 
-        axios.post(`${REACT_APP_SERVER_URL}/api/users/profile`, updateInfo)
+        axios.post(`${SERVER_URL}/api/users/profile`, updateInfo)
         .then(response =>{
             setRedirect(true);
         })

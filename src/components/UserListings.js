@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ItemCard from './ItemCard';
 import axios from 'axios';
-const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const SERVER_URL = process.env.SERVER_URL;
 
 const UserListings = (props) => {
     let listingInfo
@@ -9,7 +9,7 @@ const UserListings = (props) => {
     let [reload, setReload] = useState(false);
 
     useEffect(() => {
-        axios.get(`${REACT_APP_SERVER_URL}/api/listings/userlistings`)
+        axios.get(`${SERVER_URL}/api/listings/userlistings`)
         .then(response => {
             var userListings = response.data.filter(function (ul) {
                 return ul.seller === props.user.id
@@ -23,7 +23,7 @@ const UserListings = (props) => {
     listingInfo = userItems.map((listing, idx) => {
 
         const handleDelete = () => {
-            axios.post(`${REACT_APP_SERVER_URL}/api/listings/delete/${listing._id}`)
+            axios.post(`${SERVER_URL}/api/listings/delete/${listing._id}`)
             setReload(true)
         }
 

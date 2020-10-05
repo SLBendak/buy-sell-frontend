@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ItemCard from './ItemCard';
-const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const SERVER_URL = process.env.SERVER_URL;
 
 const Results = (props) => {
     const [listings, setListings] = useState([]);
@@ -20,7 +20,7 @@ const Results = (props) => {
             else {
                 setListFilter(props.category)
             }
-            await axios.get(`${REACT_APP_SERVER_URL}/api/listings/results`)
+            await axios.get(`${SERVER_URL}/api/listings/results`)
             .then(response => {
                 var filterData = response.data
                 if(listFilter !== "all" && listFilter !== ""){
