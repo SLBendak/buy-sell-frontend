@@ -32,9 +32,6 @@ const EditForm = (props) => {
         .catch(error => console.log(error))
     } 
     if(redirect) return <Redirect to="/profile" />
-
-
-    
         return(
             <div className='sell-form'>
                 <h3>Edit your account</h3>
@@ -55,8 +52,6 @@ const EditForm = (props) => {
                 </form>
             </div>
         )
-
-
 }
 
 export default EditForm;

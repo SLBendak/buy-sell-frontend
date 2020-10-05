@@ -27,7 +27,6 @@ const Results = (props) => {
                     filterData = response.data.filter(function (fd) {
                         return fd.category === listFilter
                     })
-                    
                 } 
                 setListings(filterData)
                 props.handleResultsData(filterData)

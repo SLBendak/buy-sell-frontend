@@ -26,7 +26,6 @@ const ItemCard = ({listing, showLink}) => {
     const classes = useStyles();
 
     return (
-        // <Grid item xs={12}>
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardMedia
@@ -64,7 +63,6 @@ const ItemCard = ({listing, showLink}) => {
                     }
                 </CardActions>
             </Card>
-        // </Grid>
     );
 }
 
