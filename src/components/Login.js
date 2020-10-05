@@ -3,7 +3,7 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from '../utils/setAuthToken';
 import { Redirect } from 'react-router-dom';
-const SERVER_URL = process.env.SERVER_URL;
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Login = (props) => {
     let [email, setEmail] = useState('');
@@ -22,7 +22,7 @@ const Login = (props) => {
 
         const userData = { email, password };
 
-        axios.post(`${SERVER_URL}/api/users/login`, userData)
+        axios.post(`${REACT_APP_SERVER_URL}/api/users/login`, userData)
         .then(response => {
             const { token } = response.data;
             // Save token to localStorage

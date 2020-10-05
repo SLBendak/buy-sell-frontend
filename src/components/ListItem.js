@@ -5,7 +5,7 @@ import '../App.css';
 
 
 
-const SERVER_URL = process.env.SERVER_URL;
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const ListItem = (props) => {
     console.log("this", props.user.id)
@@ -66,7 +66,7 @@ const ListItem = (props) => {
         const updateInfo = { title, description, location, category, contact, image, price, seller}
         console.log("listitem", updateInfo)
         
-        axios.post(`${SERVER_URL}/api/listings/list`, updateInfo)
+        axios.post(`${REACT_APP_SERVER_URL}/api/listings/list`, updateInfo)
         console.log("inside axios listing post")
         setRedirect(true);
     } 
